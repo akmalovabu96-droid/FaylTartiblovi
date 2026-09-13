@@ -31,7 +31,7 @@ Bu loyiha old school dasturiy ta’minoti estetikasini qadrlaydigan, ammo raqaml
    git clone https://github.com
    cd FaylTartiblovi
    ```
-2. `app.py`, `scanner.py`, `rules.py` va `config.py` fayllarini bitta ishlaydigan direktoriyaga joylang.
+2. `Tartiblovchi.py`, `scanner.py`, `rules.py` va `config.py` fayllarini bitta ishlaydigan direktoriyaga joylang.
 
 3. Bosh faylini ishga tushiring:
    ```bash
