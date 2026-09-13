@@ -29,7 +29,7 @@ Bu loyiha old school dasturiy ta’minoti estetikasini qadrlaydigan, ammo raqaml
 1. Repozitoriyni nusxalab oling va IDE'ingizga joylang:
    ```bash
    git clone https://github.com
-   cd RetroOrganizer
+   cd FaylTartiblovi
    ```
 2. `app.py`, `scanner.py`, `rules.py` va `config.py` fayllarini bitta ishlaydigan direktoriyaga joylang.
 
