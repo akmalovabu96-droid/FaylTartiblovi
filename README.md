@@ -4,7 +4,7 @@
 
 **RetroOrganizer** — bu kataloglaringizni avtomatik ravishda tartibga solish uchun yengil va moslashuvchan vositadir. Utilita *Windows 95 / XP* davridagi muhandislik dasturiy ta’minotining lampali, nostalgik interfeysini va zamonaviy ko‘p oqimli intellektual fayllarni saralash dvigatelini o‘zida mujassam etgan.
 
-Loyiha old school dasturiy ta’minoti estetikasini qadrlaydigan, ammo raqamli tartibsizlik muammolarini hal qilishga muhtoj bo‘lgan (Yuklanmalar papkasini tozalash, ishlab chiqish keshini saralash, hujjatlarni tizimlashtirish) ishqibozlar uchun yakka dasturchi tomonidan yaratilgan.
+Bu loyiha old school dasturiy ta’minoti estetikasini qadrlaydigan, ammo raqamli tartibsizlik muammolarini hal qilishga muhtoj bo‘lgan (Yuklanmalar papkasini tozalash, ishlab chiqish keshini saralash, hujjatlarni tizimlashtirish) ishqibozlar uchun yakka dasturchi tomonidan yaratilgan.
 
 ---
 
