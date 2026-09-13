@@ -35,7 +35,7 @@ Bu loyiha old school dasturiy ta’minoti estetikasini qadrlaydigan, ammo raqaml
 
 3. Bosh faylini ishga tushiring:
    ```bash
-   python app.py
+   python Tartiblovchi.py
    ```
 
 ---

@@ -5,3 +5,6 @@
 /ТЕСТ_ФОТО
 rules.json
 test.py
+app_logo.ico
+.idea
+__pycache__
