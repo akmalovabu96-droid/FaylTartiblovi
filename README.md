@@ -55,7 +55,7 @@ Murakkab qoida tuzilishiga misol:
     "min_size_mb": null,
     "max_size_mb": null,
     "created_after": null,
-    "date_grouping": "null"
+    "date_grouping": null
 }
 ```
 ### ⚠️ Filtrlarni sozlash bo‘yicha muhim eslatma (`null` qiymati)
