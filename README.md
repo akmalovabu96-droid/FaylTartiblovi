@@ -27,11 +27,13 @@ Bu loyiha old school dasturiy ta’minoti estetikasini qadrlaydigan, ammo raqaml
 
 ### O'rnatish
 1. Repozitoriyni nusxalab oling va IDE'ingizga joylang:
+   
    ```bash
    git clone https://github.com
    cd FaylTartiblovi
    ```
-2. Bosh faylini ishga tushiring:
+3. Bosh faylini ishga tushiring:
+   
    ```bash
    python Tartiblovchi.py
    ```
@@ -59,15 +61,18 @@ Murakkab qoida tuzilishiga misol:
 ### ⚠️ Filtrlarni sozlash bo‘yicha muhim eslatma (`null` qiymati)
 E’tibor bering, standart bo‘yicha oxirgi 4-ta parametrlar **`null`** qiymatiga ega. Bu shuni anglatadiki, **filtr o‘chirilgan** va dvijok uni e’tiborsiz qoldiradi:
 
-* **Sana asosida avtomatik guruhlashni** yoqish uchun, albatta `"date_grouping": null` ni sana formatiga almashtiring, masalan: `"%Y-%m"` (fayllarni yili va oyiga qarab `2026-09/` jildlarga ajratadi) yoki `"%Y"` (faqat yiliga qarab taxlaydi).
+* **Sana asosida avtomatik guruhlashni** yoqish uchun, albatta `"date_grouping": `dagi `null` ni sana formatiga almashtiring, masalan: `"%Y-%m"` (fayllarni yili va oyiga qarab `2026-09/` jildlarga ajratadi) yoki `"%Y"` (faqat yiliga qarab taxlaydi).
 * **Hajm bo‘yicha cheklov** (faqat og'ir fayllar, masalan`"min_size_mb": 5`): dastur kichik fayllarni o‘tkazib yuboradi va faqat 5 Megabaytdan kattalarini ko‘chiradi.
-* **Yaratilgan/o‘zgartirilgan sana bo‘yicha filtr**: agar `"created_after": `dagi `null` `2026-01-01` ga o'zgartirilsa, ushbu utilita 2026'dan eski fayllarni butunlay e’tiborsiz qoldiradi va faqat 2026-yil boshidan beri o‘zgartirilgan fayllarni qayta ishlab, ko'chiradi.
-* **Kalit so‘zlar bo‘yicha filtr**: masalan, faqat `"keywords": ["work". "invoice"]` kabi kalit so'zlarni o'z ichiga olgan va kengaytmasiga mos kelgan fayllarnigina ko'chiradi. Aytaylik, sizda `"extensions": [."pdf"]` va `"keywords": ["invoice"]` sozlangan, bu vaziyatda `invoice_photo.jpg` nomli fayl ko‘chirilmaydi, chunki kengaytma mos kelmadi. Masalan, `.pdf` li `invoice_part.pdf` kabi fayllar esa bemalol ko'chiriladi.
-* **RegEx bo'yicha filtr**: Agar `"is_regex": ` parametri `true`ga o'girilsa, u holda `keywords` ro‘yxatidagi satrlar o‘rnatilgan Python `re` moduli tomonidan qayta ishlana boshlaydi. Bu - fayl nomlarida pattern va masklarini qidirish imkonini beradi.
-  Masalan: 1. Muayyan so‘z bilan boshlanadigan fayllarni qidirish. JSON'dagi qolip: `["^inv_"]` (`^` belgisi qatorning boshini anglatadi) - **Fayl `inv_9942.pdf`** — МOS, ko'chiriladi. `my_inv_9942.pdf` faylini esa o'tkazib yuboradi (so'z boshida emas).
-  2. Nomdagi ikki so‘z uchun "VA" (AND) qat’iy sharti: Agar oddiy rejim so‘zlarni "YOKI" orqali qidirsa, RegEx orqali dasturni har ikki so‘z istalgan tartibda joylashgan fayllarni qidirishga majbur qilish mumkin. JSON'dagi qolip: `["(?=.*work)(?=.*final)"]` - Fayl `work_report_final.docx` — МOS, ko'chiriladi. Fayl `work_report_v2.docx` — O'TKAZIB YUBORADI (`final` so'zi yo'q).
+* **Yaratilgan/o‘zgartirilgan sana bo‘yicha filtr**: agar `"created_after": `dagi `null` - `2026-01-01` ga o'zgartirilsa, ushbu utilita 2026'dan eski fayllarni butunlay e’tiborsiz qoldiradi va faqat 2026-yil boshidan beri o‘zgartirilgan fayllarni qayta ishlab, ko'chiradi.
+* **Kalit so‘zlar bo‘yicha filtr**: masalan, nomida faqat `"keywords": ["work". "invoice"]` kabi kalit so'zlar bor va kengaytmasiga mos tushgan fayllarnigina ko'chiradi. Aytaylik, sizda `"extensions": [."pdf"]` va `"keywords": ["invoice"]` deb sozlangan, bu vaziyatda `invoice_photo.jpg` nomli fayl ko‘chirilmaydi, chunki kengaytma mos kelmadi. Lekin, `.pdf` kengaytmali `invoice_part.pdf` kabi fayllar bemalol ko'chiriladi.
+* **RegEx bo'yicha filtr**: Agar `"is_regex": ` parametri `true`ga o'girilsa, u holda `keywords` ro‘yxatidagi ramziy satrlar o‘rnatilgan Python `re` moduli tomonidan qayta ishlana boshlaydi. Bu - fayl nomlarida pattern va masklarini qidirish imkonini beradi.
 
-* Agar barchasi `null` holatida qoldirilsa, dastur fayllarni *faqat* standartli `extensions` kengaytmalari ro‘yxati bo‘yicha filtrlaydi.
+* Misol 1: Muayyan so‘z bilan boshlanadigan fayllarni qidirish. 
+* `rules.json`dagi `keywords` qolipi: `["^inv_"]` (`^` belgisi qatorning boshini anglatadi) bo'lsin  - demak **Fayl `inv_9942.pdf`** — МOS, ko'chiriladi. `my_inv_9942.pdf` faylini esa o'tkazib yuboradi (chunki `inv` so'zi boshida emas).
+* Misol 2: Nomdagi ikki so‘z uchun "VA" (AND) qat’iy sharti.
+* Agar oddiy rejim so‘zlarni "YOKI" orqali qidirsa, RegEx orqali dasturni har ikki so‘z istalgan tartibda joylashgan fayllarni qidirishga majbur qilish mumkin. JSON'dagi qolip: `["(?=.*work)(?=.*final)"]` bo'lsin - demak **Fayl `work_report_final.docx`** — МOS, ko'chiriladi. **Fayl `work_report_v2.docx`** — O'TKAZIB YUBORADI (chunki `final` so'zi yo'q).
+
+* **Standart**: Barchasi `null` holatida qoldirilsa, dastur fayllarni *faqat* standartli `extensions` degan kengaytmalari ro‘yxati bo‘yicha filtrlaydi. Hayotingizni oson qilish uchun.
 
 ---
 
