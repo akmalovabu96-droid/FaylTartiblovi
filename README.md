@@ -62,7 +62,7 @@ E’tibor bering, standart bo‘yicha oxirgi 4-ta parametrlar **`null`** qiymati
 * **Sana asosida avtomatik guruhlashni** yoqish uchun, albatta `"date_grouping": null` ni sana formatiga almashtiring, masalan: `"%Y-%m"` (fayllarni yili va oyiga qarab `2026-09/` jildlarga ajratadi) yoki `"%Y"` (faqat yiliga qarab taxlaydi).
 * **Hajm bo‘yicha cheklov** (faqat og'ir fayllar, masalan`"max_size_mb": 5`): dastur kichik fayllarni o‘tkazib yuboradi va faqat 5 Megabaytdan kattalarini ko‘chiradi.
 * **Yaratilgan/o‘zgartirilgan sana bo‘yicha filtr**: agar `"created_after": `dagi `null` `2026-01-01` ga o'zgartirilsa, ushbu utilita 2026'dan eski fayllarni butunlay e’tiborsiz qoldiradi va faqat 2026-yil boshidan beri o‘zgartirilgan fayllarni qayta ishlab, ko'chiradi.
-* **Kalit so‘zlar bo‘yicha filtr**: masalan, faqat `"keywords": ["work". "invoice"]` kabi kalit so'zlarni o'z ichiga olgan va kengaytmasiga mos kelgan fayllarnigina ko'chiradi. Aytaylik, sizda `"extensions": [."pdf"]` va `"keywords": ["invoice"]` sozlangan, bu vaziyatda invoice_photo.jpg nomli fayl ko‘chirilmaydi, chunki kengaytma mos kelmadi. Masalan `.pdf` li `invoice_part.pdf` fayli esa bemalol ko'chiriladi.
+* **Kalit so‘zlar bo‘yicha filtr**: masalan, faqat `"keywords": ["work". "invoice"]` kabi kalit so'zlarni o'z ichiga olgan va kengaytmasiga mos kelgan fayllarnigina ko'chiradi. Aytaylik, sizda `"extensions": [."pdf"]` va `"keywords": ["invoice"]` sozlangan, bu vaziyatda `invoice_photo.jpg` nomli fayl ko‘chirilmaydi, chunki kengaytma mos kelmadi. Masalan, `.pdf` li `invoice_part.pdf` kabi fayllar esa bemalol ko'chiriladi.
 
 * Agar barchasi `null` holatida qoldirilsa, dastur fayllarni *faqat* standartli `extensions` kengaytmalari ro‘yxati bo‘yicha filtrlaydi.
 
